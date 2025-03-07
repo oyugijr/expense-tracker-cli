@@ -14,6 +14,12 @@ class CLI:
         self._setup_commands()
 
     def _setup_commands(self):
+        
+        # budget command
+        budget_parser = self.subparsers.add_parser('set-budget')
+        budget_parser.add_argument('--month', type=int, required=True)
+        budget_parser.add_argument('--amount', type=float, required=True)
+
         # Add command
         add_parser = self.subparsers.add_parser('add')
         add_parser.add_argument('--description', required=True)

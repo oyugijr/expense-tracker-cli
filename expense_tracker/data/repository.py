@@ -57,3 +57,37 @@ class ExpenseRepository:
             if expense.id == expense_id:
                 return expense
         return None
+
+class BudgetRepository:
+    def __init__(self, file_path='budgets.json'):
+        self.file_path = file_path
+        self._budgets = self._load_data()
+
+    def _load_data(self) -> List[Budget]:
+        if not os.path.exists(self.file_path):
+            return []
+        
+        with open(self.file_path, 'r') as f:
+            try:
+                data = json.load(f)
+                return [Budget.from_dict(item) for item in data]
+            except (json.JSONDecodeError, KeyError):
+                return []
+
+    def _save_data(self):
+        with open(self.file_path, 'w') as f:
+            data = [b.to_dict() for b in self._budgets]
+            json.dump(data, f, indent=2)
+
+    def set_budget(self, budget: Budget):
+        # Remove existing budget for same month/year
+        self._budgets = [b for b in self._budgets 
+                       if not (b.month == budget.month and b.year == budget.year)]
+        self._budgets.append(budget)
+        self._save_data()
+
+    def get_budget(self, month: int, year: int) -> Optional[Budget]:
+        for budget in self._budgets:
+            if budget.month == month and budget.year == year:
+                return budget
+        return None        

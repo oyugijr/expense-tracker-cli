@@ -12,6 +12,14 @@ class SummaryCommand:
         expenses = self.repo.get_all()
         current_year = datetime.now().year
 
+         if budget := self.budget_repo.get_budget(target_month, current_year):
+        budget_status = f" (Budget: {format_currency(budget.amount)}"
+        if total > budget.amount:
+            budget_status += f" ⚠️ Exceeded by {format_currency(total - budget.amount)}"
+        elif total > 0.8 * budget.amount:
+            budget_status += " ⚠️ Approaching limit"
+        print(budget_status)
+
         if self.args.category:
             expenses = [
                 e for e in expenses 
