@@ -11,12 +11,14 @@ class AddCommand:
     def execute(self):
         ExpenseValidator.validate_description(self.args.description)
         ExpenseValidator.validate_amount(self.args.amount)
+        ExpenseValidator.validate_category(self.args.category)
 
         new_expense = Expense(
             id=self.repo.get_next_id(),
             date=date.today(),
             description=self.args.description.strip(),
-            amount=self.args.amount
+            amount=self.args.amount,
+            category=self.args.category.strip().title()
         )
 
         self.repo.add(new_expense)

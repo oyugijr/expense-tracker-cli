@@ -12,6 +12,14 @@ class SummaryCommand:
         expenses = self.repo.get_all()
         current_year = datetime.now().year
 
+        if self.args.category:
+            expenses = [
+                e for e in expenses 
+                if e.category.lower() == self.args.category.lower()
+            ]
+            if self.args.breakdown:
+                return self._category_breakdown(expenses)
+
         if self.args.month:
             ExpenseValidator.validate_month(self.args.month)
             filtered = [
@@ -25,3 +33,13 @@ class SummaryCommand:
         
         total = sum(e.amount for e in expenses)
         return f"Total expenses: {format_currency(total)}"
+
+    def _category_breakdown(self, expenses):
+        categories = {}
+        for e in expenses:
+            categories[e.category] = categories.get(e.category, 0) + e.amount
+        
+        lines = ["Category          Amount"]
+        for cat, amt in categories.items():
+            lines.append(f"{cat:<15}  {format_currency(amt)}")
+        return "\n".join(lines)

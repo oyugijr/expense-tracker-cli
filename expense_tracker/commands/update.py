@@ -7,6 +7,10 @@ class UpdateCommand:
         self.repo = ExpenseRepository()
 
     def execute(self):
+        if self.args.category:
+            ExpenseValidator.validate_category(self.args.category)
+            expense.category = self.args.category.strip().title()
+            
         expense = self.repo.get_by_id(self.args.id)
         if not expense:
             raise ValueError(f"Expense with ID {self.args.id} not found")

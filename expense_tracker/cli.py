@@ -18,6 +18,7 @@ class CLI:
         add_parser = self.subparsers.add_parser('add')
         add_parser.add_argument('--description', required=True)
         add_parser.add_argument('--amount', type=float, required=True)
+        add_parser.add_argument('--category', required=True) 
 
         # Delete command
         del_parser = self.subparsers.add_parser('delete')
@@ -28,9 +29,12 @@ class CLI:
         update_parser.add_argument('--id', type=int, required=True)
         update_parser.add_argument('--description', required=False)
         update_parser.add_argument('--amount', type=float, required=False)
+        update_parser.add_argument('--category', required=False)
 
         # List command
         self.subparsers.add_parser('list')
+        list_parser = self.subparsers.add_parser('list')
+        list_parser.add_argument('--category', required=False)
 
         # Summary command
         summary_parser = self.subparsers.add_parser('summary')
