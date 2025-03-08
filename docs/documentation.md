@@ -7,7 +7,7 @@ A command-line application for managing personal finances with category support 
 ## Table of Contents
 
 - [Installation](#installation-)
-- [Basic Usage](#basic-usage-)
+<!-- - [Basic Usage](#basic-usage) -->
 - [Features](#features-)
 - [Command Reference](#command-reference-)
   - [Add Expense](#add-expense)
@@ -50,84 +50,115 @@ expense-tracker [command] [options]
 
 #### Command Reference 📖
 
-Add Expense
+### **Add Expense**
 
 ```sh
-expense-tracker add --description "Text" --amount X.X --category "Category"
-
-Required Flags:
---description: Expense description (string)
---amount: Positive number (>0)
---category: Expense category
+# expense-tracker add --description "Text" --amount X.X --category "Category"
 ```
 
-List Expenses
+**Required Flags:**
+
+- --description: Expense description (string)
+- --amount: Positive number (>0)
+- --category: Expense category
+
+### **List Expenses**
 
 ```bash
-expense-tracker list [--category CATEGORY] [--month MONTH]
+# expense-tracker list [--category CATEGORY] [--month MONTH]
+```
+
 Options:
---category: Filter by category (case-insensitive)
---month: Filter by month (1-12)
 
-Output:
-ID  Date        Category    Description         Amount
-1   2024-08-01  Food        Groceries           $50.00
-2   2024-08-02  Transport   Gas                 $40.00
-```
+- --category: Filter by category (case-insensitive)
+- --month: Filter by month (1-12)
 
-Delete Expense
+**Output:**
 
 ```bash
-expense-tracker delete --id ID
+# ID  Date        Category    Description         Amount
+# 1   2024-08-01  Food        Groceries           $50.00
+# 2   2024-08-02  Transport   Gas                 $40.00,
 ```
 
-Update Expense
+### **Delete Expense**
 
 ```bash
-expense-tracker update --id ID [--description TEXT] [--amount X.X] [--category CATEGORY]
-Options:
+#  expense-tracker delete --id ID
+```
+
+### **Update Expense**
+
+```bash
+# expense-tracker update --id ID [--description TEXT] [--amount X.X] [--category CATEGORY]
+```
+
+**Options:**
 At least one of: description, amount, or category
-```
 
-View Summary
+### **View Summary**
 
 ```bash
-expense-tracker summary [--month M] [--category C] [--breakdown]
-Options:
---month: Show specific month's total
---category: Filter by category
---breakdown: Show category distribution
-
-Example Output:
-
-Total expenses: $90.00
----
-Category Breakdown:
-Food        $50.00 (55.6%)
-Transport   $40.00 (44.4%)
+# expense-tracker summary [--month M] [--category C] [--breakdown]
 ```
+
+**Options:**
+
+- --month: Show specific month's total
+- --category: Filter by category
+- --breakdown: Show category distribution
+
+### **Example Output:**
+
+#### ***Total expenses: $90.00***
+
+Category Breakdown:
+
+- Food $50.00 (55.6%)
+- Transport $40.00 (44.4%)
+
+---
 
 ### Examples 🧑💻
 
-Add weekly expenses:
+- **Add weekly expenses:**
 
 ```bash
-expense-tracker add --description "Coffee" --amount 4.5 --category Food
-expense-tracker add --description "Taxi" --amount 15 --category Transport
+# expense-tracker add --description "Coffee" --amount 4.5 --category Food
+# expense-tracker add --description "Taxi" --amount 15 --category Transport
 ```
 
-Generate monthly report:
+- **Generate monthly report:**
 
 ```bash
-expense-tracker summary --month 8 --breakdown
+# expense-tracker summary --month 8 --breakdown
 ```
 
-Manage entries:
+- **Manage entries:**
 
 ```bash
-expense-tracker list --category food
-expense-tracker update --id 2 --amount 18
-expense-tracker delete --id 5
+# expense-tracker list --category food
+# expense-tracker update --id 2 --amount 18
+# expense-tracker delete --id 5
+```
+
+- **Export Expenses**
+
+```bash
+# $ expense-tracker export --output path/to/file.csv [--month M] [--category C]
+```
+
+**Options:**
+
+- --output: Output file path (required)
+- --month: Filter by month (1-12)
+- --category: Filter by category
+  **Example CSV Output:**
+
+```bash
+# ID,Date,Category,Description,Amount
+# 1,2024-08-05,Food,Groceries,50.00
+# 2,2024-08-06,Transport,Gas,30.00
 ```
 
 ### Data Management 💾
