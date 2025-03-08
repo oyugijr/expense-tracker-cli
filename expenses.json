@@ -3,12 +3,63 @@
     "id": 1,
     "date": "2025-03-07",
     "description": "Lunch",
-    "amount": 200.0
+    "amount": 200.0,
+    "category": "Uncategorized"
   },
   {
     "id": 3,
     "date": "2025-03-07",
     "description": "Girlfriend",
-    "amount": 1000.0
+    "amount": 1000.0,
+    "category": "Uncategorized"
+  },
+  {
+    "id": 4,
+    "date": "2025-03-08",
+    "description": "Gas station",
+    "amount": 50.0,
+    "category": "Transport"
+  },
+  {
+    "id": 6,
+    "date": "2025-03-08",
+    "description": "Restaurant dinner",
+    "amount": 200.0,
+    "category": "Food"
+  },
+  {
+    "id": 7,
+    "date": "2025-03-08",
+    "description": "Restaurant dinner",
+    "amount": 200.0,
+    "category": "Food"
+  },
+  {
+    "id": 8,
+    "date": "2025-03-08",
+    "description": "Restaurant breakfat",
+    "amount": 180.0,
+    "category": "Food"
+  },
+  {
+    "id": 9,
+    "date": "2025-03-08",
+    "description": "cook",
+    "amount": 20000.0,
+    "category": "Food"
+  },
+  {
+    "id": 10,
+    "date": "2025-03-08",
+    "description": "personal",
+    "amount": 20000.0,
+    "category": "Food"
+  },
+  {
+    "id": 11,
+    "date": "2025-03-08",
+    "description": "food stuffs",
+    "amount": 20000.0,
+    "category": "Kitchen"
   }
 ]

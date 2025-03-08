@@ -4,7 +4,8 @@ from .commands import (
     DeleteCommand,
     ListCommand,
     UpdateCommand,
-    SummaryCommand
+    SummaryCommand,
+    SetBudgetCommand
 )
 
 class CLI:
@@ -14,7 +15,13 @@ class CLI:
         self._setup_commands()
 
     def _setup_commands(self):
-        
+
+        # CSV_export
+        export_parser = self.subparsers.add_parser('export')
+        export_parser.add_argument('--output', required=True)
+        export_parser.add_argument('--month', type=int, required=False)
+        export_parser.add_argument('--category', required=False)
+
         # budget command
         budget_parser = self.subparsers.add_parser('set-budget')
         budget_parser.add_argument('--month', type=int, required=True)
@@ -38,8 +45,8 @@ class CLI:
         update_parser.add_argument('--category', required=False)
 
         # List command
-        self.subparsers.add_parser('list')
         list_parser = self.subparsers.add_parser('list')
+        list_parser.add_argument('--month', type=int, required=False)
         list_parser.add_argument('--category', required=False)
 
         # Summary command
@@ -55,11 +62,15 @@ class CLI:
             elif args.command == 'delete':
                 result = DeleteCommand(args).execute()
             elif args.command == 'list':
-                result = ListCommand().execute()
+                result = ListCommand(args).execute()
             elif args.command == 'update':
                 result = UpdateCommand(args).execute()
             elif args.command == 'summary':
                 result = SummaryCommand(args).execute()
+            elif args.command == 'set-budget':
+                result = SetBudgetCommand(args).execute()
+            else:
+                raise ValueError("Invalid command")
             
             print(result)
         except Exception as e:
