@@ -1,7 +1,7 @@
 import json
 import os
 from typing import List, Optional
-from .models import Expense
+from .models import Budget, Expense
 
 class ExpenseRepository:
     def __init__(self, file_path='expenses.json'):
