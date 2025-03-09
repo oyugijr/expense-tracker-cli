@@ -52,18 +52,18 @@ $  python -m expense_tracker.cli summary --breakdown
 # Food        $330.00 (68.8%)
 # Transport   $150.00 (31.2%)
 
-$ expense-tracker summary --month 8 --category Food
+$ python -m expense_tracker.cli summary --month 8 --category Food
 # August 2024 Food Expenses:
 # Total: $330.00
 # Budget: $500.00 (66% utilized)
 
 # Budget Warnings
-$ expense-tracker add --category Food --amount 300 --description "Birthday party"
+$ python -m expense_tracker.cli add --category Food --amount 300 --description "Birthday party"
 # Expense added successfully (ID: 4)
 # ⚠️  Warning: Budget exceeded by $130.00 (13% over)
 # ⚠️  Food category exceeded by $130.00 (26% over)
 
-$ expense-tracker summary --month 8
+$ python -m expense_tracker.cli summary --month 8
 # August 2024 Summary:
 # Total expenses: $780.00
 # Budget: $1000.00 (78% utilized)

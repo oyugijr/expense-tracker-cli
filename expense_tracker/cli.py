@@ -52,6 +52,8 @@ class CLI:
         # Summary command
         summary_parser = self.subparsers.add_parser('summary')
         summary_parser.add_argument('--month', type=int, required=False)
+        summary_parser.add_argument('--category', required=False)
+        summary_parser.add_argument('--breakdown', action='store_true', required=False)
 
     def run(self):
         args = self.parser.parse_args()
