@@ -37,6 +37,12 @@ pip install -e .
 - **Run Commands**
 
 ```bash
+python -m expense_tracker.cli [COMMAND] [OPTIONS]
+```
+
+or
+
+```bash
 expense-tracker [COMMAND] [OPTIONS]
 ```
 
@@ -45,10 +51,17 @@ expense-tracker [COMMAND] [OPTIONS]
 ##### Command Options Example
 
 ```bash
-add --category, --amount, --desc expense-tracker add --category Food --amount 15 --desc "Lunch"
-list --month, --category expense-tracker list --month 8
-set-budget --month, --amount expense-tracker set-budget --month 8 --amount 1000
-export --output, --month, --category expense-tracker export --output expenses.csv
+- add --category, --amount, --desc 
+    # python -m expense_tracker.cli add --category Food --amount 15 --desc "Lunch"
+
+- list --month, --category 
+    # python -m expense_tracker.cli list --month 8
+
+- set-budget --month, --amount 
+    # python -m expense_tracker.cli set-budget --month 8 --amount 1000
+
+- export --output, --month, --category 
+    # python -m expense_tracker.cli export --output expenses.csv
 ```
 
 ##### 💡 Example Workflow
@@ -56,25 +69,25 @@ export --output, --month, --category expense-tracker export --output expenses.cs
 - **Set a monthly budget:**
 
 ```bash
-expense-tracker set-budget --month 8 --amount 500
+python -m expense_tracker.cli set-budget --month 8 --amount 500
 ```
 
 - **Add expenses:**
 
 ```bash
-expense-tracker add --category Food --amount 50 --desc "Groceries"
+python -m expense_tracker.cli add --category Food --amount 50 --desc "Groceries"
 ```
 
 - **Check budget status:**
 
 ```bash
-expense-tracker summary --month 8
+python -m expense_tracker.cli summary --month 8
 ```
 
 - **Export data:**
 
 ```bash
-expense-tracker export --output expenses.csv
+python -m expense_tracker.cli export --output expenses.csv
 ```
 
 ### 📁 Data Management

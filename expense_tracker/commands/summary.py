@@ -28,6 +28,7 @@ class SummaryCommand:
 
             if budget:
                 return self._format_budget_summary(total, budget, month_name)
+            else:
                 return f"Total expenses for {month_name}: {format_currency(total)}"
 
                 total = sum(e.amount for e in expenses)

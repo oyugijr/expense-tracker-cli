@@ -1,0 +1,146 @@
+ python -m expense_tracker.cli summary --month 3
+Error: 'SummaryCommand' object has no attribute 'expense_repo'
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary --month 3
+Error: 'SummaryCommand' object has no attribute 'expenses_repo'
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary --month 3
+Error: 'SummaryCommand' object has no attribute 'arg'
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary --month 3
+Error: 'SummaryCommand' object has no attribute 'arg'
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary --month 3
+None
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary
+None
+Error: ListCommand.__init__() takes 1 positional argument but 2 were given
+Error: cannot access local variable 'result' where it is not associated with a value
+Traceback (most recent call last):
+  File "<frozen runpy>", line 88, in _run_code
+    from .commands import (
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli set-budget --month 3 --amount 10000
+Error: 'SetBudgetCommand' object has no attribute 'ards'
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli set-budget --month 3 --amount 10000
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli add --category Food --amount 200 --description "Restaurant dinner"\
+usage: expense-tracker-cli [-h] {export,set-budget,add,delete,update,list,summary} ...
+expense-tracker-cli: error: unrecognized arguments: \
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli add --category Food --amount 200 --description "Restaurant dinner"                                                                                                                                                Expense added successfully (ID: 7)
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli add --category Food --amount 300 --description "Restaurant breakfat"                                                                                                                                              Expense added successfully (ID: 8)
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+Error: ListCommand.__init__() takes 1 positional argument but 2 were given
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary
+None
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary --month 3
+None
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli set-budget --month 4 --amount 20000
+Budget set for April 2025: 20000.0
+Error: ListCommand.__init__() takes 1 positional argument but 2 were given
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli>  python -m expense_tracker.cli update --id 8 --amount 180
+Expense updated successfully
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli delete --id 5
+Expense deleted successfully
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary --month 3
+None
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli add --category Food --amount 20000 --description "cook"       Expense added successfully (ID: 9)
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli add --category Food --amount 20000 --description "cook" --month 3                                                                                                                                                 usage: expense-tracker-cli [-h] {export,set-budget,add,delete,update,list,summary} ...
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli add --category Food --amount 20000 --description "cook" --montusage: expense-tracker-cli [-h] {export,set-budget,add,delete,update,list,summary} ...
+expense-tracker-cli: error: unrecognized arguments: --month 3
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli add --category Food --amount 20000 --description "cook"       Expense added successfully (ID: 10)
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+ID    Date        Category         Description           Amount
+1     2025-03-07  Lunch                       $200
+3     2025-03-07  Girlfriend                 $1000
+4     2025-03-08  Gas station                  $50
+6     2025-03-08  Restaurant dinner           $200
+7     2025-03-08  Restaurant dinner           $200
+8     2025-03-08  Restaurant breakfat         $180
+10    2025-03-08  cook                      $20000
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli delete
+usage: expense-tracker-cli delete [-h] --id ID
+expense-tracker-cli delete: error: the following arguments are required: --id
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli add --category Kitchen --amount 20000 --description "food stuffs "
+Expense added successfully (ID: 11)
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+ID    Date        Category         Description           Amount
+1     2025-03-07  Lunch                       $200
+4     2025-03-08  Gas station                  $50
+6     2025-03-08  Restaurant dinner           $200
+7     2025-03-08  Restaurant dinner           $200
+8     2025-03-08  Restaurant breakfat         $180
+9     2025-03-08  cook                      $20000
+10    2025-03-08  cook                      $20000
+11    2025-03-08  food stuffs               $20000
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+Error: 'ListCommand' object has no attribute '_filter_expenses'
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+ID    Date        Category         Description                     Amount
+1     2025-03-07  Lunch                       $200
+4     2025-03-08  Gas station                  $50
+6     2025-03-08  Restaurant dinner           $200
+7     2025-03-08  Restaurant dinner           $200
+9     2025-03-08  cook                      $20000
+10    2025-03-08  cook                      $20000
+11    2025-03-08  food stuffs               $20000
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli>  python -m expense_tracker.cli update --id 10 --description "personal"
+Expense updated successfully
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+ID    Date        Category         Description                     Amount
+1     2025-03-07  Lunch                       $200
+3     2025-03-07  Girlfriend                 $1000
+4     2025-03-08  Gas station                  $50
+7     2025-03-08  Restaurant dinner           $200
+8     2025-03-08  Restaurant breakfat         $180
+9     2025-03-08  cook                      $20000
+10    2025-03-08  personal                  $20000
+11    2025-03-08  food stuffs               $20000
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+ID    Date        Category       Description               Amount
+1     2025-03-07  Uncategorized  Lunch                       $200
+3     2025-03-07  Uncategorized  Girlfriend                 $1000
+4     2025-03-08  Transport      Gas station                  $50
+6     2025-03-08  Food           Restaurant dinner           $200
+8     2025-03-08  Food           Restaurant breakfat         $180
+9     2025-03-08  Food           cook                      $20000
+10    2025-03-08  Food           personal                  $20000
+11    2025-03-08  Kitchen        food stuffs               $20000
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli set-budget --month 4 --amount 50000
+Budget set for April 2025: 50000.0
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli set-budget --month 3 --amount 50000
+Budget set for March 2025: 50000.0
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary --month 3
+None
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+ID    Date        Category       Description               Amount
+3     2025-03-07  Uncategorized  Girlfriend                 $1000
+6     2025-03-08  Food           Restaurant dinner           $200
+7     2025-03-08  Food           Restaurant dinner           $200
+8     2025-03-08  Food           Restaurant breakfat         $180
+9     2025-03-08  Food           cook                      $20000
+10    2025-03-08  Food           personal                  $20000
+11    2025-03-08  Kitchen        food stuffs               $20000
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli\expense_tracker\cli.py", line 2, in <module>
+    from .commands import (
+  File "C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli\expense_tracker\commands\__init__.py", line 5, in <module>
+    from .summary import SummaryCommand
+  File "C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli\expense_tracker\commands\summary.py", line 30
+    return self._format_budget_summary(total, budget, month _name)
+                                                      ^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli list
+ID    Date        Category       Description               Amount
+1     2025-03-07  Uncategorized  Lunch                       $200
+3     2025-03-07  Uncategorized  Girlfriend                 $1000
+4     2025-03-08  Transport      Gas station                  $50
+6     2025-03-08  Food           Restaurant dinner           $200
+7     2025-03-08  Food           Restaurant dinner           $200
+8     2025-03-08  Food           Restaurant breakfat         $180
+9     2025-03-08  Food           cook                      $20000
+10    2025-03-08  Food           personal                  $20000
+11    2025-03-08  Kitchen        food stuffs               $20000
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli set-budget --month 3 --amount 50000                           Budget set for March 2025: 50000.0
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli summary --month 3
+Total expenses for March: $61830
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli> python -m expense_tracker.cli export --output expenses.csv
+Error: Invalid command
+PS C:\Users\HP\EOS\Oprog\Roadmap-w\expense-tracker-cli>

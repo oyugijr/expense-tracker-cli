@@ -5,7 +5,7 @@ from .commands import (
     ListCommand,
     UpdateCommand,
     SummaryCommand,
-    SetBudgetCommand
+    SetBudgetCommand,
 )
 
 class CLI:
