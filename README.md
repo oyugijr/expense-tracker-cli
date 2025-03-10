@@ -2,6 +2,12 @@
 
 A Python-based command-line application for managing personal finances with budget tracking and CSV exports.
 
+## Project_URL
+
+```bash
+https://github.com/oyugijr/expense-tracker-cli
+```
+
 ## 🚀 Quick Start
 
 ### Prerequisites
