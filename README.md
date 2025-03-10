@@ -4,9 +4,7 @@ A Python-based command-line application for managing personal finances with budg
 
 ## Project_URL
 
-```bash
-https://github.com/oyugijr/expense-tracker-cli
-```
+https://roadmap.sh/projects/expense-tracker
 
 ## 🚀 Quick Start
 
