@@ -1,3 +1,5 @@
+# Commands
+
 Here are the examples of commands to run on the Command Line Interface
 
 ```bash
